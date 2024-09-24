@@ -207,7 +207,7 @@ class ImportClass:
                 MAXERRORS 0
                 LOGDIR '{self._LOGDIR}'
             )
-        );
+        ) DISTRIBUTE ON RANDOM;
         --DROP TABLE {random_name};
         """
     def pipe_server(self):
