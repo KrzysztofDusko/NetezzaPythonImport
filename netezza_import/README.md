@@ -1,0 +1,1 @@
+This package will helps with import csv file to Netezza database system. 

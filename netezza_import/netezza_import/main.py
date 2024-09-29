@@ -231,16 +231,13 @@ class ImportClass:
                 byte_data = str.encode(str_data, encoding="utf-8", errors='ignore')
                 win32file.WriteFile(pipe, byte_data)
                 win32file.WriteFile(pipe, self._RECORD_DELIM)
-                
-            print("finished now")
         finally:
             win32file.CloseHandle(pipe)
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(
-                    prog='TODO',
-                    description='import data from csv to netezza database',
-                    epilog='license:GPL-3.0 more info https://github.com/KrzysztofDusko/NetezzaPythonImport')
+                    prog='nz_csv_pipe',
+                    description='import data from csv to netezza database')
     parser.add_argument('filename')           # positional argument
     parser.add_argument('-l', '--log_dir',required=False, default=r'C:\log') 
     parser.add_argument('-d', '--driver',required=False, default='dotnet') 
@@ -250,3 +247,6 @@ if __name__ == '__main__':
     print(ic.get_sql())
     ic.pipe_server()
     print('FINISHED !!!')
+
+if __name__ == '__main__':
+    main();
