@@ -236,7 +236,7 @@ class ImportClass:
 
 def main():
     parser = argparse.ArgumentParser(
-                    prog='nz_csv_pipe',
+                    prog='vi',
                     description='import data from csv to netezza database')
     parser.add_argument('filename')           # positional argument
     parser.add_argument('-l', '--log_dir',required=False, default=r'C:\log') 
